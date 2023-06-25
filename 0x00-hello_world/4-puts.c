@@ -5,6 +5,7 @@
 #include <stdio.h>
 int main(void)
 {
+	/*Main print out a string to standard output using puts function*/
 	puts("\"Programming is like building a multilingual puzzle\n");
 	return (0);
 }
