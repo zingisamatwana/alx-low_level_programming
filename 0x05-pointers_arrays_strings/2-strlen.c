@@ -3,6 +3,7 @@
  *The code prints a string to stdout
  */
 #include <stdio.h>
+#include <string.h>
 
 /**
  * int_strlen - This is missing short description
