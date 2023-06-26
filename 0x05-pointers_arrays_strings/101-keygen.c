@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define PASSWORD_LENGTH 8
+#define PASSWORD_LENGTH 26
 
 /**
  * generate_password - Generates a random password
