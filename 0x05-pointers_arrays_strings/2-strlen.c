@@ -6,11 +6,11 @@
 #include <string.h>
 
 /**
- * int_strlen - This is missing short description
+ * _strlen - This is missing short description
  * @s: define a char variable
  *Return: string length
  */
-void int_strlen(char *s)
+int _strlen(char *s)
 {
 	return (strlen(s));
 }
