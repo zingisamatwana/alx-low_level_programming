@@ -1,0 +1,16 @@
+/*
+ *This file contains C source code
+ *The code prints a string to stdout
+ */
+#include <stdio.h>
+#include <string.h>
+
+/**
+ * print_rev - This is missing short description
+ * @s: define a char variable
+ *Return: string length
+ */
+void print_rev(char *s)
+{
+	strrev(s);
+}
