@@ -10,7 +10,7 @@
  * @str: define a char variable
  *Return: string length
  */
-int _puts(char *str)
+void _puts(char *str)
 {
 	puts(str);
 }
