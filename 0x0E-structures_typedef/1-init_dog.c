@@ -17,19 +17,3 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 	d->age = age;
 	d->owner = owner;
 }
-
-int main()
-{
-	struct dog myDog;
-	char name[] = "Buddy";
-	float age = 3.5;
-	char owner[] = "John";
-
-	init_dog(&myDog, name, age, owner);
-
-	printf("Dog's name: %s\n", myDog.name);
-	printf("Dog's age: %.1f\n", myDog.age);
-	printf("Owner's name: %s\n", myDog.owner);
-
-	return 0;
-}
