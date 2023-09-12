@@ -1,5 +1,5 @@
-#ifndef DOG_STRUCT_H
-#define DOG_STRUCT_H
+#ifndef DOG_TYPEDEF_H
+#define DOG_TYPEDEF_H
 
 /**
  * struct dog - Defines a dog structure.
@@ -14,4 +14,9 @@ struct dog
 	char *owner;
 };
 
-#endif /* DOG_STRUCT_H */
+/**
+ * dog_t - Typedef for struct dog.
+ */
+typedef struct dog dog_t;
+
+#endif /* DOG_TYPEDEF_H */
