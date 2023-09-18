@@ -28,7 +28,8 @@ int string_length(char *s)
 }
 
 /**
- * check_palindrome - Recursive helper function to check if a string is palindrome.
+ * check_palindrome - Recursive helper function
+ * to check if a string is palindrome.
  * @s: The string to be checked.
  * @start: The starting index of the string.
  * @end: The ending index of the string.
@@ -43,5 +44,5 @@ int check_palindrome(char *s, int start, int end)
 	if (s[start] != s[end])
 		return (0); /* Characters at start and end don't match */
 
-	return (check_palindrome(s, start + 1, end - 1)); /* Check next pair of characters */
+	return (check_palindrome(s, start + 1, end - 1));
 }
