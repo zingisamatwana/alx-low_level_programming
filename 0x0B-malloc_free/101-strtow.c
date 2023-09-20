@@ -1,10 +1,22 @@
 #include <stdlib.h>
 
+/**
+ * is_space - Check if a character is a whitespace character.
+ * @c: The character to check.
+ *
+ * Return: 1 if it's a whitespace character, 0 otherwise.
+ */
 int is_space(char c)
 {
 	return (c == ' ' || c == '\t' || c == '\n');
 }
 
+/**
+ * count_words - Count the number of words in a string.
+ * @str: The string to count words in.
+ *
+ * Return: The number of words.
+ */
 int count_words(char *str)
 {
 	int count = 0, in_word = 0;
@@ -24,6 +36,12 @@ int count_words(char *str)
 	return (count);
 }
 
+/**
+ * strtow - Split a string into words.
+ * @str: The string to split.
+ *
+ * Return: A pointer to an array of words, or NULL on failure.
+ */
 char **strtow(char *str)
 {
 	int i, j, len = 0, word_count = 0;
