@@ -7,6 +7,7 @@
 
 /* Function prototypes */
 size_t print_list(const list_t *h);
-int _putchar(char c); // Add the _putchar prototype
+int _putchar(char c); /* Add the _putchar prototype */
+size_t list_len(const list_t *h);
 
 #endif /* LISTS_H */
