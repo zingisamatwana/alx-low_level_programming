@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 /**
  * print_listint_safe - Prints a listint_t linked list safely.
@@ -14,9 +14,7 @@ size_t print_listint_safe(const listint_t *head)
 	size_t node_count = 0;
 
 	if (head == NULL)
-	{
 		exit(98);
-	}
 
 	slow_ptr = head;
 	fast_ptr = head;
@@ -53,39 +51,5 @@ size_t print_listint_safe(const listint_t *head)
  */
 void print_node(const listint_t *node)
 {
-	char buffer[15];
-	int n = node->n;
-	int i = 0;
-	char is_negative = 0;
-
-	if (n < 0)
-	{
-		is_negative = 1;
-		n = -n;
-	}
-
-	if (n == 0)
-	{
-		buffer[i++] = '0';
-	}
-	else
-	{
-		while (n != 0)
-		{
-			buffer[i++] = (n % 10) + '0';
-			n /= 10;
-		}
-	}
-
-	if (is_negative)
-	{
-		buffer[i++] = '-';
-	}
-
-	for (int j = i - 1; j >= 0; j--)
-	{
-		putchar(buffer[j]);
-	}
-
-	putchar('\n');
+	printf("[%p] %d\n", (void *)node, node->n);
 }
