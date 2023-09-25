@@ -33,5 +33,6 @@ size_t print_listint_safe(const listint_t *head);
 void print_address(void *p);
 void print_number(int n);
 int _putchar(char c);
+void print_node(const listint_t *node);
 
 #endif /* LISTS_H */
