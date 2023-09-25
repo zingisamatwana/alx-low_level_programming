@@ -1,6 +1,6 @@
 section .data
 	hello db "Hello, Holberton",0
-	fmt db "Hello, %s",10,0 ; Use 10 (newline character) here
+	fmt db "%s",10,0
 
 section .text
 	global main
@@ -13,4 +13,3 @@ main:
 	call printf
 	pop rbp
 	ret
-	
