@@ -35,5 +35,6 @@ void print_number(int n);
 int _putchar(char c);
 void print_node(const listint_t *node);
 size_t free_listint_safe(listint_t **h);
+listint_t *find_listint_loop(listint_t *head);
 
 #endif /* LISTS_H */
