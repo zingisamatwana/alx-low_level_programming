@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * pop_lise head node of a listint_t linked list.
+ * pop_listint -  head node of a listint_t linked list.
  * @head: Pointer to the head of the list.
  * Return: The head node's  0 if the list is empty.
  */
