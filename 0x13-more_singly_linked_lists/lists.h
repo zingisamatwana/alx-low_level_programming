@@ -34,5 +34,6 @@ void print_address(void *p);
 void print_number(int n);
 int _putchar(char c);
 void print_node(const listint_t *node);
+size_t free_listint_safe(listint_t **h);
 
 #endif /* LISTS_H */
