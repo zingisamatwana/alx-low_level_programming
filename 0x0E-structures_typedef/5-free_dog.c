@@ -1,4 +1,4 @@
-#include "dog_typedef.h"
+#include "dog.h"
 #include <stdlib.h>
 
 /**
