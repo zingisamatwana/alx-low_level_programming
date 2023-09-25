@@ -1,6 +1,6 @@
 section .data
 	hello db "Hello, Holberton",0
-	fmt db "%s",0
+	fmt db "Hello, %s\n",0 ; Added newline character '\n'
 
 section .text
 	global main
