@@ -45,7 +45,8 @@ char *multiply(char *num1, char *num2)
 		carry = 0;
 		for (j = len2 - 1, k = i + len2; j >= 0; j--, k--)
 		{
-			int product = (num1[i] - '0') * (num2[j] - '0') + (result[k] - '0') + carry;
+			int product = (num1[i] - '0') * (num2[j] - '0') +\
+				(result[k] - '0') + carry;
 			carry = product / 10;
 			result[k] = (product % 10) + '0';
 		}
