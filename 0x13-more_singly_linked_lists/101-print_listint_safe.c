@@ -1,4 +1,6 @@
 #include "lists.h"
+#include <stddef.h>
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -20,7 +22,12 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (fast_ptr != NULL && fast_ptr->next != NULL)
 	{
-		printf("[%p] %d\n", (void *)slow_ptr, slow_ptr->n);
+		_putchar('[');
+		print_address((void *)slow_ptr);
+		_putchar(']');
+		_putchar(' ');
+		print_number(slow_ptr->n);
+		_putchar('\n');
 		node_count++;
 
 		slow_ptr = slow_ptr->next;
@@ -28,7 +35,15 @@ size_t print_listint_safe(const listint_t *head)
 
 		if (slow_ptr == fast_ptr)
 		{
-			printf("-> [%p] %d\n", (void *)slow_ptr, slow_ptr->n);
+			_putchar('-');
+			_putchar('>');
+			_putchar(' ');
+			_putchar('[');
+			print_address((void *)slow_ptr);
+			_putchar(']');
+			_putchar(' ');
+			print_number(slow_ptr->n);
+			_putchar('\n');
 			node_count++;
 			exit(98);
 		}
@@ -36,10 +51,76 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (slow_ptr != NULL)
 	{
-		printf("[%p] %d\n", (void *)slow_ptr, slow_ptr->n);
+		_putchar('[');
+		print_address((void *)slow_ptr);
+		_putchar(']');
+		_putchar(' ');
+		print_number(slow_ptr->n);
+		_putchar('\n');
 		node_count++;
 		slow_ptr = slow_ptr->next;
 	}
 
 	return (node_count);
+}
+
+/**
+ * print_address - Prints the address.
+ * @p: Pointer to the address to be printed.
+ */
+void print_address(void *p)
+{
+	size_t i;
+	unsigned long int address = (unsigned long int)p;
+	char hex_digit;
+
+	_putchar('0');
+	_putchar('x');
+
+	if (address == 0)
+	{
+		_putchar('0');
+		return;
+	}
+
+	for (i = 0; address > 0; i++)
+	{
+		hex_digit = (address % 16);
+		if (hex_digit < 10)
+			hex_digit += '0';
+		else
+			hex_digit += 'a' - 10;
+		_putchar(hex_digit);
+		address /= 16;
+	}
+}
+
+/**
+ * print_number - Prints an integer.
+ * @n: The integer to be printed.
+ */
+void print_number(int n)
+{
+	if (n == 0)
+	{
+		_putchar('0');
+		return;
+	}
+	if (n < 0)
+	{
+		_putchar('-');
+		n = -n;
+	}
+	if (n / 10)
+		print_number(n / 10);
+	_putchar((n % 10) + '0');
+}
+
+/**
+ * _putchar - Writes a character to stdout.
+ * @c: The character to print.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
 }
