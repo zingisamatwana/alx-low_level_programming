@@ -13,4 +13,3 @@ main:
 	call printf
 	pop rbp
 	ret
-	
