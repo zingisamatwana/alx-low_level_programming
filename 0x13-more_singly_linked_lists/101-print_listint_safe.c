@@ -10,18 +10,16 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *slow_ptr, *fast_ptr;
+	const listint_t *slow_ptr = head;
+	const listint_t *fast_ptr = head;
 	size_t node_count = 0;
 
 	if (head == NULL)
 		exit(98);
 
-	slow_ptr = head;
-	fast_ptr = head;
-
-	while (fast_ptr != NULL && fast_ptr->next != NULL)
+	while (slow_ptr != NULL && fast_ptr != NULL && fast_ptr->next != NULL)
 	{
-		print_node(slow_ptr);
+		printf("[%p] %d\n", (void *)slow_ptr, slow_ptr->n);
 		node_count++;
 
 		slow_ptr = slow_ptr->next;
@@ -29,7 +27,7 @@ size_t print_listint_safe(const listint_t *head)
 
 		if (slow_ptr == fast_ptr)
 		{
-			print_node(slow_ptr);
+			printf("[%p] %d\n", (void *)slow_ptr, slow_ptr->n);
 			node_count++;
 			exit(98);
 		}
@@ -37,19 +35,10 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (slow_ptr != NULL)
 	{
-		print_node(slow_ptr);
+		printf("[%p] %d\n", (void *)slow_ptr, slow_ptr->n);
 		node_count++;
 		slow_ptr = slow_ptr->next;
 	}
 
 	return (node_count);
-}
-
-/**
- * print_node - Prints a listint_t node.
- * @node: Pointer to the node to be printed.
- */
-void print_node(const listint_t *node)
-{
-	printf("[%p] %d\n", (void *)node, node->n);
 }
