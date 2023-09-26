@@ -1,6 +1,5 @@
 #include "lists.h"
 #include <stddef.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -11,49 +10,47 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *slow_ptr = head;
-	const listint_t *fast_ptr = head;
 	size_t node_count = 0;
 
 	if (head == NULL)
-		exit(98);
-
-	while (slow_ptr != NULL && fast_ptr != NULL && fast_ptr->next != NULL)
 	{
-		print_address((void *)slow_ptr);
-		_putchar(' ');
-		print_number(slow_ptr->n);
+		_putchar('[');
+		_putchar('0');
+		_putchar(']');
 		_putchar('\n');
+		return (0);
+	}
+
+	while (head)
+	{
+		print_node(head);
 		node_count++;
-
-		slow_ptr = slow_ptr->next;
-		fast_ptr = fast_ptr->next->next;
-
-		if (slow_ptr == fast_ptr)
+		if (head < head->next)
+			head = head->next;
+		else
 		{
 			_putchar('-');
 			_putchar('>');
 			_putchar(' ');
-			print_address((void *)slow_ptr);
-			_putchar(' ');
-			print_number(slow_ptr->n);
+			print_address((void *)head->next);
 			_putchar('\n');
-			node_count++;
-			exit(98);
+			break;
 		}
 	}
 
-	while (slow_ptr != NULL)
-	{
-		print_address((void *)slow_ptr);
-		_putchar(' ');
-		print_number(slow_ptr->n);
-		_putchar('\n');
-		node_count++;
-		slow_ptr = slow_ptr->next;
-	}
-
 	return (node_count);
+}
+
+/**
+ * print_node - Prints a listint_t node.
+ * @node: Pointer to the node to be printed.
+ */
+void print_node(const listint_t *node)
+{
+	print_address((void *)node);
+	_putchar(' ');
+	print_number(node->n);
+	_putchar('\n');
 }
 
 /**
